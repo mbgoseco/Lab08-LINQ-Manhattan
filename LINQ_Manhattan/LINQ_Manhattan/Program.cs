@@ -19,9 +19,9 @@ namespace LINQ_Manhattan
 
                 string manhattan = objManhattan.ToString();
 
-                IEnumerable<string> neighborhoods = from FeatureCollection.Properties
+                //IEnumerable<string> neighborhoods = from FeatureCollection.Properties
 
-                //Console.WriteLine(manhattan);
+                Console.WriteLine(manhattan);
                 //JObject deserializedProduct = JsonConvert.DeserializeObject<JObject>(o);
             }
         }
