@@ -1,0 +1,11 @@
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\bin\Debug\netcoreapp2.2\LINQ_Manhattan.deps.json
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\bin\Debug\netcoreapp2.2\LINQ_Manhattan.runtimeconfig.json
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\bin\Debug\netcoreapp2.2\LINQ_Manhattan.runtimeconfig.dev.json
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\bin\Debug\netcoreapp2.2\LINQ_Manhattan.dll
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\obj\Debug\netcoreapp2.2\LINQ_Manhattan.csprojAssemblyReference.cache
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\obj\Debug\netcoreapp2.2\LINQ_Manhattan.csproj.CoreCompileInputs.cache
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\obj\Debug\netcoreapp2.2\LINQ_Manhattan.AssemblyInfoInputs.cache
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\obj\Debug\netcoreapp2.2\LINQ_Manhattan.AssemblyInfo.cs
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\bin\Debug\netcoreapp2.2\LINQ_Manhattan.pdb
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\obj\Debug\netcoreapp2.2\LINQ_Manhattan.dll
+C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\LINQ_Manhattan\obj\Debug\netcoreapp2.2\LINQ_Manhattan.pdb
