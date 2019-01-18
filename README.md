@@ -5,3 +5,4 @@ This app features a JSON file that contains a data set of location information f
 
 ## Screenshots
 ![rawdata](https://github.com/mbgoseco/Lab08-LINQ-Manhattan/blob/master/assets/raw_data.PNG)
+![filtered](https://github.com/mbgoseco/Lab08-LINQ-Manhattan/blob/master/assets/filtered.PNG)
