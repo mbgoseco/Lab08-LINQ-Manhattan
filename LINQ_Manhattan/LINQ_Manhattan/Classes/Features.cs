@@ -4,11 +4,10 @@ using System.Text;
 
 namespace LINQ_Manhattan.Classes
 {
-    public class FeatureCollection
+    public class Features
     {
-        
         public string Type { get; set; }
-        public Features[] Features { get; set; }
-        
+        public Geometry Geometry { get; set; }
+        public Properties Properties { get; set; }
     }
 }
