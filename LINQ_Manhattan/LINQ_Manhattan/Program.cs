@@ -15,14 +15,14 @@ namespace LINQ_Manhattan
         {
             string path = @"C:\Users\MBG\codefellows\401\Lab08-LINQ-Manhattan\LINQ_Manhattan\data.json";
 
-            OutputRaw(path);
-            OutputBlankless(path);
-            OutputNoDupes(path);
-            OutputBlanklessAndDupeless(path);
-            OutputBlanklessLambda(path); 
+            BeginQuery(path);
         }
 
-        public static void OutputRaw(string path)
+        /// <summary>
+        /// Begins the query chain to gather neighborhoods from the data.json file, then remove blank listings, then remove duplicates.
+        /// </summary>
+        /// <param name="path">File path of data.json</param>
+        public static void BeginQuery(string path)
         {
             // Output all neighborhood names in the data set
             using (StreamReader reader = File.OpenText(path))
@@ -32,113 +32,71 @@ namespace LINQ_Manhattan
 
                 FeatureCollection root = JsonConvert.DeserializeObject<FeatureCollection>(data);
 
-                var hoodData = from n in root.Features
+                var queryOne = from n in root.Features
                                select n.Properties.Neighborhood;
 
                 Console.WriteLine("Neighborhood data (raw)");
                 Console.WriteLine("=======================");
-                foreach (string hood in hoodData)
+                foreach (string hood in queryOne)
                 {
                     Console.WriteLine(hood);
                 }
                 Console.WriteLine();
                 Console.WriteLine();
-            }
-        }
 
-        public static void OutputBlankless(string path)
-        {
-            // Output neighborhood names that aren't blank
-            using (StreamReader reader = File.OpenText(path))
-            {
-                var data = "";
-                data = reader.ReadToEnd();
 
-                FeatureCollection root = JsonConvert.DeserializeObject<FeatureCollection>(data);
-
-                var hoodData = from n in root.Features
-                               where n.Properties.Neighborhood != ""
-                               select n.Properties.Neighborhood;
+                // Output neighborhood names that aren't blank
+                var queryTwo = from b in queryOne
+                               where b != ""
+                               select b;
 
                 Console.WriteLine("Neighborhood data (filtered blanks)");
                 Console.WriteLine("=======================");
-                foreach (string hood in hoodData)
+                foreach (string hood in queryTwo)
                 {
                     Console.WriteLine(hood);
                 }
                 Console.WriteLine();
                 Console.WriteLine();
-            }
-        }
 
-        public static void OutputNoDupes(string path)
-        {
-            // Output neighborhood names whithout duplicates
-            using (StreamReader reader = File.OpenText(path))
-            {
-                var data = "";
-                data = reader.ReadToEnd();
 
-                FeatureCollection root = JsonConvert.DeserializeObject<FeatureCollection>(data);
-
-                var hoodData = from n in root.Features
-                               group n by n.Properties.Neighborhood into hoods
-                               select hoods.Key;
+                // Output neighborhood names whithout duplicates
+                var queryThree = queryTwo.Distinct();
 
                 Console.WriteLine("Neighborhood data (filtered duplicates)");
                 Console.WriteLine("=======================");
-                foreach (string hood in hoodData)
+                foreach (string hood in queryThree)
                 {
                     Console.WriteLine(hood);
                 }
                 Console.WriteLine();
                 Console.WriteLine();
-            }
-        }
 
-        public static void OutputBlanklessAndDupeless(string path)
-        {
-            // Output neighborhood names whithout blanks AND duplicates
-            using (StreamReader reader = File.OpenText(path))
-            {
-                var data = "";
-                data = reader.ReadToEnd();
 
-                FeatureCollection root = JsonConvert.DeserializeObject<FeatureCollection>(data);
-
-                var hoodData = from n in root.Features
+                // Output neighborhood names whithout blanks AND duplicates in one query
+                var queryFour = from n in root.Features
                                where n.Properties.Neighborhood != ""
                                group n by n.Properties.Neighborhood into hoods
                                select hoods.Key;
 
                 Console.WriteLine("Neighborhood data (filtered blanks and duplicates)");
                 Console.WriteLine("=======================");
-                foreach (string hood in hoodData)
+                foreach (string hood in queryFour)
                 {
                     Console.WriteLine(hood);
                 }
                 Console.WriteLine();
                 Console.WriteLine();
-            }
-        }
 
-        public static void OutputBlanklessLambda(string path)
-        {
-            // Output neighborhood names whithout blanks using lambda expressions
-            using (StreamReader reader = File.OpenText(path))
-            {
-                var data = "";
-                data = reader.ReadToEnd();
 
-                FeatureCollection root = JsonConvert.DeserializeObject<FeatureCollection>(data);
-
-                var hoodData = root.Features.Where(n => n.Properties.Neighborhood != "");
+                // Output neighborhood names whithout blanks using lambda expressions
+                var queryFive = queryOne.Where(x => x != "");
 
                 Console.WriteLine("Neighborhood data (lambda)");
                 Console.WriteLine("=======================");
-                foreach (Features hood in hoodData)
+                foreach (string hood in queryFive)
                 {
-                    Console.WriteLine(hood.Properties.Neighborhood);
+                    Console.WriteLine(hood);
                 }
                 Console.WriteLine();
                 Console.WriteLine();
